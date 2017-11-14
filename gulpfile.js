@@ -59,13 +59,26 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./environments/production/css'));
 });
 
+gulp.task('prnxify', function() {
+    gulp.src('./src/prnx.js', {entry: true})
+        .pipe(gbrowserify({
+            transform: ['babelify']
+        }))
+        .pipe(gulp.dest('./environments/development/js'))
+        .pipe(stripDebug())
+        .pipe(uglify())
+        .pipe(gulp.dest('./environments/production/js'))
+        .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('watch', function () {
     gulp.watch('app/**/*.html', ['frontEnd']);
     gulp.watch('app/**/*.scss', ['frontEnd']);
     gulp.watch('app/**/*.js', ['frontEnd']);
+    gulp.watch('src/**/*.js', ['frontEnd']);
     gulp.watch('app/**/*.vue', ['frontEnd']);
     gulp.watch('app/**/*.jsx', ['frontEnd']);
 });
 
-gulp.task('frontEnd', ['browserify', 'sass', 'img', 'media', 'views']);
-gulp.task('default',  ['browserify', 'sass', 'img', 'media', 'views', 'watch', 'server']);
+gulp.task('frontEnd', ['browserify', 'prnxify', 'sass', 'img', 'media', 'views']);
+gulp.task('default',  ['browserify', 'prnxify', 'sass', 'img', 'media', 'views', 'watch', 'server']);
