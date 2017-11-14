@@ -14,11 +14,5 @@
 				version: appData.version,
 			};
 		},
-		ready() {
-			io.emit('ready');
-			io.on('talk', function(data) {
-				alert(data.message);
-			});
-		},
 	};
 </script>
