@@ -10,6 +10,7 @@ var uglify      = require('gulp-uglify');
 var sass        = require('gulp-sass');
 var server      = require('gulp-express');
 var htmlmin     = require('gulp-htmlmin');
+var fs          = require('fs');
 
 gulp.task('server', function () {
     server.run(['index.js']);
@@ -71,11 +72,36 @@ gulp.task('prnxify', function() {
         .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('src-css', function() {
+    gulp.src('./src/sass/prnx.scss')
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(gulp.dest('./src/css/'));
+});
+
+gulp.task('convert-css', ['src-css'], function() {
+
+    setTimeout(function() {
+        convert();
+    }, 2000);
+    
+
+    function convert() {
+        fs.readFile('./src/css/prnx.css', 'utf-8', function(err, data) {
+            var fileData = `export default '${data.toString().replace(/(\r\n|\n|\r)/gm,"")}';`;
+            fs.writeFile('./src/styles/prnx.js', fileData, function(error) {
+                if(error) { console.log(error);} 
+                else {console.log('success');}
+            });
+        });
+    };
+});
+
 gulp.task('watch', function () {
     gulp.watch('app/**/*.html', ['frontEnd']);
     gulp.watch('app/**/*.scss', ['frontEnd']);
     gulp.watch('app/**/*.js', ['frontEnd']);
     gulp.watch('src/**/*.js', ['frontEnd']);
+    gulp.watch('src/**/*.scss', ['convert-css']);
     gulp.watch('app/**/*.vue', ['frontEnd']);
     gulp.watch('app/**/*.jsx', ['frontEnd']);
 });

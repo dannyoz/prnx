@@ -46,6 +46,7 @@ const serve = (ing) => {
     image.style.zIndex = '999999';
     image.style.top = `${pos.y}px`;
     image.style.left = `${pos.x}px`;
+    image.className = 'slide-in-up';
     document.body.appendChild(image);
 };
 
