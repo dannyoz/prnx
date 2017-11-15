@@ -1,4 +1,7 @@
 const charlie = () => {
+
+	console.log('Charlie likes to darnce');
+	
 	const url1 = 'http://i0.kym-cdn.com/photos/images/newsfeed/000/367/194/58b.png';
 	const url2 = 'http://i49.tinypic.com/mvtifn.png';
 

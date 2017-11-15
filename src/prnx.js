@@ -19,4 +19,4 @@ Object.keys(prnxMethods).forEach((method) => {
 });
 
 // RANDOMISER !!!!!
-// randomiser(prnxMethods);
+randomiser(prnxMethods);

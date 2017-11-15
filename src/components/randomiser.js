@@ -1,6 +1,12 @@
 import randomRange from '../shared/random-range';
 
-const randomiser = (methods) => {
+const randomiser = (methodsObj) => {
+
+	const methods = [];
+
+	Object.keys(methodsObj).forEach((method) => {
+		methods.push(methodsObj[method]);
+	});
 
 	const randomDelay = randomRange(0, 50000);
 	const randomInterval = randomRange(0, 1000);
