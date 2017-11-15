@@ -1,5 +1,9 @@
 @import "../../node_modules/spice-sass/src/spice";
 
+$defaultVendors   : "-webkit-" "-moz-" "" !default;
+$animationVendors : "-webkit-" "-moz-" "" !default;
+$transformVendors : "-webkit-" "-moz-" "" !default;	
+
 $splat-stops : (
 	0% : "scale(30) rotate(50deg)",
 	90% : "scale(0.9) rotate(-5deg)",
@@ -12,4 +16,34 @@ img.splat {
 	position: relative;
 	z-index: 99999;
 	@include animation('splat',$handbrake,0.3s);
+}
+
+$dancing-stops : (
+	0% : "rotate(0deg)   translateY(0)",
+	5% : "rotate(5deg)   translateY(0)",
+	10% : "rotate(0deg)  translateY(-10px)",
+	15% : "rotate(-4deg) translateY(0)",
+	20% : "rotate(0deg)  translateY(0)",
+	25% : "rotate(6deg)  translateY(-2px)",
+	30% : "rotate(0deg)  translateY(0)",
+	35% : "rotate(-1deg) translateY(0)",
+	40% : "rotate(0deg)  translateY(5px)",
+	45% : "rotate(3deg)  translateY(-15px)",
+	50% : "rotate(0deg)  translateY(0)",
+	55% : "rotate(-6deg) translateY(0)",
+	60% : "rotate(0deg)  translateY(0)",
+	65% : "rotate(2deg)  translateY(0)",
+	70% : "rotate(0deg)  translateY(-4px)",
+	75% : "rotate(-6deg) translateY(0)",
+	80% : "rotate(0deg)  translateY(5px)",
+	85% : "rotate(5deg)  translateY(-15px)",
+	90% : "rotate(0deg)  translateY(-10px)",
+	95% : "rotate(-1deg) translateY(-5px)",
+	100% : "rotate(0deg) translateY(0)"
+);
+
+@include transformKeyframes('dancing', $dancing-stops);
+
+img.dancing {
+	@include animation('dancing', 'linear', 2s, 0, false, 'infinite');
 }
