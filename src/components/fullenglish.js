@@ -1,14 +1,14 @@
 import randomRange from '../shared/random-range';
-import message from '../shared/message';
+import randomOption from '../shared/random-option';
 
 const fullEnglish = (val) => {
     const count = (val) ? val : randomRange(5, 9);
     const delay = randomRange(50, 900);
 
-    message(`Full english with ${count} ingredients!!!`);
+    console.log(`Full english with ${count} ingredients!!!`);
 
     for (var i = 0; i < count; i++) {
-        const ing = ingredient();
+        const ing = randomOption(ingredients);
         setTimeout(() => {
             serve(ing);
         }, delay * i);
@@ -29,11 +29,6 @@ const ingredients = [
     'http://pngimg.com/uploads/fries/fries_PNG13.png',
     'http://www.mcdonalds.ca/content/dam/Canada/en/product_pages/breakfast/hero/hero_hash-browns.png',
 ];
-
-const ingredient = () => {
-    const index = Math.floor(Math.random() * ingredients.length);
-    return ingredients[index]; 
-};
 
 const serve = (ing) => {
     const size = randomRange(300, 550);

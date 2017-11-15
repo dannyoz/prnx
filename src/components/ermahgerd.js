@@ -1,9 +1,8 @@
-import message from '../shared/message';
 const htmlREGEX = /<[a-z][\s\S]*>/i;
 
 const ermahgerd = () => {
 
-    message('Ermahgerd thers sert hers bern herked!!');
+    console.log('Ermahgerd thers sert hers bern herked!!');
 
     var textElements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span'];
     var otherElements = ['a', 'div', 'td', 'button', 'dd', 'li', 'label', 'input', 'textarea', 'option'];
