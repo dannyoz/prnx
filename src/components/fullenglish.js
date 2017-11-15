@@ -1,11 +1,10 @@
 import randomRange from '../shared/random-range';
-import message from '../shared/message';
 
 const fullEnglish = (val) => {
     const count = (val) ? val : randomRange(5, 9);
     const delay = randomRange(50, 900);
 
-    message(`Full english with ${count} ingredients!!!`);
+    console.log(`Full english with ${count} ingredients!!!`);
 
     for (var i = 0; i < count; i++) {
         const ing = ingredient();
