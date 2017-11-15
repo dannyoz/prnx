@@ -2,7 +2,7 @@ import randomRange from '../shared/random-range';
 
 const randomiser = (methods) => {
 
-	const randomDelay = randomRange(0, 50);
+	const randomDelay = randomRange(0, 50000);
 	const randomInterval = randomRange(0, 1000);
 
 	let remainingMethods = methods;

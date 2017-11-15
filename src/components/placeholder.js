@@ -1,11 +1,25 @@
+import randomOption from '../shared/random-option';
+
 const placeholder = () => {
-	console.log('Placeholder images added!!!');
-	
+
+	const options = [
+		'http://placekitten.com',
+		'https://www.placecage.com',
+		'https://placebear.com',
+		'http://fillmurray.com',
+		'http://baconmockup.com',
+		'http://lorempizza.com',
+	];
+
+	const option = randomOption(options);
+
+	console.log(`${option} Placeholder images added!!!`);
+
 	const imageElements = domElement('img');
 	imageElements.forEach((img) => {
 		const width = img.width;
 		const height = img.height;
-		img.src = `https://www.placecage.com/${width}/${height}`;
+		img.src = `${option}/${width}/${height}`;
 	});
 };
 

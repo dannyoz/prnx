@@ -5,6 +5,7 @@ import randomiser from './components/randomiser';
 import insertStyles from './shared/insert-styles';
 
 insertStyles();
+placeholder();
 
 // RANDOMISER !!!!!
 
