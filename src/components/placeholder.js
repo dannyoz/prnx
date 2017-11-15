@@ -9,6 +9,7 @@ const placeholder = () => {
 		'http://fillmurray.com',
 		'http://baconmockup.com',
 		'http://lorempizza.com',
+		'http://stevensegallery.com',
 	];
 
 	const option = randomOption(options);

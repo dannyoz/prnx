@@ -1,3 +1,15 @@
 @import "../../node_modules/spice-sass/src/spice";
 
-@include slideIn("up",40,ease,0.6s,5);
+$splat-stops : (
+	0% : "scale(30) rotate(50deg)",
+	90% : "scale(0.9) rotate(-5deg)",
+	100% : "scale(1) rotate(0deg)"
+);
+
+@include transformKeyframes('splat', $splat-stops, 'fadeIn');
+
+img.splat {
+	position: relative;
+	z-index: 99999;
+	@include animation('splat',$handbrake,0.3s);
+}
