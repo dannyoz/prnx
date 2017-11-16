@@ -9,7 +9,6 @@ import insertStyles from './shared/insert-styles';
 import draggable from './shared/draggable';
 
 insertStyles();
-flatulence();
 // draggable('img');
 
 const prnxMethods = {
