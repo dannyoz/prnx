@@ -33,10 +33,12 @@ const ermahgerdify = (element) => {
     const regex3 = /EE|OO|AA|UU/g;
     const regex4 = /[AIOU]/g;
     const regex5 = / E| O| A| U/g;
+    const regex6 = /[AIOU]/;
     const derpText = element.innerText
+        .replace(regex5, ' Er')
+        .replace(regex6, 'Er')
         .replace(regex1, 'er')
         .replace(regex2, 'er')
-        .replace(regex5, ' Er')
         .replace(regex3, 'ER')
         .replace(regex4, 'ER')
         .replace('y ', 'er ');
