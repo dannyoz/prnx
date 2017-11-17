@@ -8,20 +8,20 @@ import randomiser from './components/randomiser';
 import insertStyles from './shared/insert-styles';
 import draggable from './shared/draggable';
 
-insertStyles();
-// draggable('img');
-
 const prnxMethods = {
  	charlie,
     ermahgerd,
     flatulence,
 	fullEnglish,
 	placeholder,
-}
+};
 
 Object.keys(prnxMethods).forEach((method) => {
 	document[method] = prnxMethods[method];
 });
+
+insertStyles();
+// draggable('img');
 
 // RANDOMISER !!!!!
 // randomiser(prnxMethods);
