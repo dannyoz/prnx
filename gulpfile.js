@@ -90,7 +90,7 @@ gulp.task('convert-css', ['src-css'], function() {
             var fileData = `export default '${data.toString().replace(/(\r\n|\n|\r)/gm,"")}';`;
             fs.writeFile('./src/styles/prnx.js', fileData, function(error) {
                 if(error) { console.log(error);} 
-                else {console.log('success');}
+                else {console.log('css converted');}
             });
         });
     };
