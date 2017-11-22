@@ -10,6 +10,20 @@ const horror = () => {
         'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fofficialpsds.com%2Fimages%2Fthumbs%2FScary-Skull-psd96322.png&f=1',
     ];
 
+    const screams = [
+        'https://www.soundjay.com/human/woman-scream-01.mp3',
+        'https://www.soundjay.com/human/woman-scream-02.mp3',
+        'https://www.soundjay.com/human/man-screaming-01.mp3',
+    ];
+
+    const scream = randomOption(screams);
+    const audio = document.createElement('audio');
+    const source = document.createElement('source');
+    audio.setAttribute('autoplay', 'true');
+    source.setAttribute('type', 'audio/mpeg');
+    source.setAttribute('src', scream);
+    audio.appendChild(source);
+
     const container = document.createElement('div');
     container.className = 'centre';
 
@@ -26,6 +40,7 @@ const horror = () => {
 
     setTimeout(() => {
         container.appendChild(img);
+        document.body.appendChild(audio);
         setTimeout(() => {
             img.className = 'scary dancing';
         }, 300);
