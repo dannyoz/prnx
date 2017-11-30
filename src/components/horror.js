@@ -8,6 +8,7 @@ const horror = () => {
     const scaryImages = [
         'https://images.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.trickortreatstudios.com%2Fmedia%2Fcatalog%2Fcategory%2Falice_cooper.png&f=1',
         'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fofficialpsds.com%2Fimages%2Fthumbs%2FScary-Skull-psd96322.png&f=1',
+        'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0127%2F0982%2Fproducts%2F26445_1024x1024.png%3Fv%3D1407508743&f=1',
     ];
 
     const screams = [
