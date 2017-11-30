@@ -19,8 +19,8 @@ img.splat {
 }
 
 $dancing-stops : (
-	0%   : "rotate(0deg)   translateY(0)",
-	5%   : "rotate(5deg)   translateY(0)",
+	0%   : "rotate(0deg)  translateY(0)",
+	5%   : "rotate(5deg)  translateY(0)",
 	10%  : "rotate(0deg)  translateY(-10px)",
 	15%  : "rotate(-4deg) translateY(0)",
 	20%  : "rotate(0deg)  translateY(0)",
@@ -39,7 +39,7 @@ $dancing-stops : (
 	85%  : "rotate(5deg)  translateY(-15px)",
 	90%  : "rotate(0deg)  translateY(-10px)",
 	95%  : "rotate(-1deg) translateY(-5px)",
-	100% : "rotate(0deg) translateY(0)"
+	100% : "rotate(0deg)  translateY(0)"
 );
 
 @include transformKeyframes('dancing', $dancing-stops);
