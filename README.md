@@ -1,3 +1,3 @@
 # PRNX
 
-Test environment
+Chrome extention test environment
